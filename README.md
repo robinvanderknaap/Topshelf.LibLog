@@ -17,10 +17,10 @@ LibLog will automatically scan for the following frameworks, NLog, Log4Net, EntL
 If you want to implement custom logging, you need to create a custom log provider and set it before the Topshelf Host is configured.
 
 ```csharp
-Topshelf.LibLog.Logging.LogProvider.SetCurrentLogProvider(new CusomLogProvider());
+Topshelf.LibLog.Logging.LogProvider.SetCurrentLogProvider(new CustomLogProvider());
 ```
 ```csharp
-public class CusomLogProvider : Topshelf.LibLog.Logging.ILogProvider
+public class CustomLogProvider : Topshelf.LibLog.Logging.ILogProvider
 {
 	public Topshelf.LibLog.Logging.ILog GetLogger(string name)
 	{
