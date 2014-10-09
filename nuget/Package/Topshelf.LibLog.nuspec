@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Topshelf.LibLog</id>
+        <version>1.0.0</version>
+        <authors>Robin van der Knaap</authors>
+        <owners>Robin van der Knaap</owners>
+        <licenseUrl>https://github.com/robinvanderknaap/Topshelf.LibLog/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/robinvanderknaap/Topshelf.LibLog</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This integration library adds support for LibLog to Topshelf. LibLog enables dependency free logging. It contains transparent builtin support for NLog, Log4Net, EntLib Logging and SeriLog or allows the user to define a custom provider. Works with .NET 4 and higher.</description>
+        <summary></summary>
+        <copyright>Robin van der Knaap and Contributors 2014</copyright>
+        <tags>topshelf, logging, framework, component, nlog, log4net, entlib, serilog</tags>
+		<dependencies>
+			<dependency id="Topshelf" version="3.1.0" />
+		</dependencies>
+    </metadata>
+</package>
