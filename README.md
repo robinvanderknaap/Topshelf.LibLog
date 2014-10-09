@@ -11,5 +11,49 @@ HostFactory.New(x =>
     x.UseLibLog();
 });
 ```
+LibLog will automatically scan for the following frameworks, NLog, Log4Net, EntLib Logging and SeriLog. If it cannot find any of these frameworks, logging is automatically disabled. 
+
+### Custom logging
+If you want to implement custom logging, you need to create a custom log provider and set it before the Topshelf Host is configured.
+
+```csharp
+Topshelf.LibLog.Logging.LogProvider.SetCurrentLogProvider(new CusomLogProvider());
+```
+```csharp
+public class CusomLogProvider : Topshelf.LibLog.Logging.ILogProvider
+{
+	public Topshelf.LibLog.Logging.ILog GetLogger(string name)
+	{
+		return new CustomLogger(name);
+	}
+}
+```
+The customlogger should implement Topshelf.LibLog.Logging.ILog
+
+```csharp
+public class CustomLogger : Topshelf.LibLog.Logging.ILog
+{
+	public CustomLogger(string name)
+	{
+		....
+	}
+	
+	public bool Log(Topshelf.LibLog.Logging.LogLevel logLevel, Func<string> messageFunc)
+	{
+		if (messageFunc != null)
+		{
+			// Call to your own custom methods
+			Log(messageFunc());
+		}
+		return true;
+	}
+
+	public void Log<TException>(Topshelf.LibLog.Logging.LogLevel logLevel, Func<string> messageFunc, TException exception) where TException : Exception
+	{
+		// Call to your own custom methods
+		Log(messageFunc(), exception);
+	}
+}
+```
 [0]: https://github.com/damianh/LibLog
 [1]: https://github.com/Topshelf/Topshelf
