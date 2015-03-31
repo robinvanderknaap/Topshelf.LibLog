@@ -182,3 +182,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Local History for Visual Studio(http://localhistory.codeplex.com)
+.localhistory
