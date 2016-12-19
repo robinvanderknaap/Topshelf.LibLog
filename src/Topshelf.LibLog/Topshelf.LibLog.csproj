@@ -38,7 +38,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Packages\LibLog.3.1\LibLog.cs" />
+    <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
     <Compile Include="LibLogConfiguratorExtensions.cs" />
     <Compile Include="LibLogLoggerConfigurator.cs" />
     <Compile Include="LibLogLogWriter.cs" />
